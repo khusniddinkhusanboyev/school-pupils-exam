@@ -1,5 +1,7 @@
+
 package uz.schoolpupilcomptest.security.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,16 +19,18 @@ public class SpringSecurity {
 
 //    @Autowired
 //    private UserDetailsService userDetailsService;
-/*
 
-@Bean
+
+
+/*@Bean
 protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
     auth.inMemoryAuthentication()
             .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
             .and()
             .withUser("admin").password(passwordEncoder().encode("password")).roles("ADMIN");
-}
-*/
+}*/
+
+
 
 
     @Bean
@@ -49,7 +53,9 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/loadProcessUrl")
-                .successForwardUrl("/")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .successForwardUrl("/success")
                 .permitAll()
                 .and()
                 .logout()
@@ -59,7 +65,10 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
                 .rememberMe();
         return http.build();
     }
-
+/*    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("ram").password("ram123").roles("ADMIN");
+    }*/
 //    @Autowired
 //    public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
 //        builder.userDetailsService(userDetailsService)

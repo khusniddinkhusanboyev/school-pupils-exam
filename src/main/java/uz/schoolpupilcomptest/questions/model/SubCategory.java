@@ -20,6 +20,8 @@ public class SubCategory {
     private Integer id;
     private String subCategoryImage;
     private String title;
+    @Lob
+    @Column(length=8192)
     private String description;
     @JoinColumn(name = "category_id",table = "category",referencedColumnName = "id",nullable = false)
     private Integer categoryId;

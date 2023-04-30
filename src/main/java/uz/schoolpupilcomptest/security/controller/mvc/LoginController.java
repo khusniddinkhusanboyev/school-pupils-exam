@@ -1,3 +1,4 @@
+
 package uz.schoolpupilcomptest.security.controller.mvc;
 
 
@@ -22,13 +23,15 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/loadProcessUrl")
-    public String validation(@ModelAttribute("userDetail")UserRequest userRequest){
-      var optinalUser=userService.validation(UserRequest.builder().username(userRequest.getUsername()).password(userRequest.getPassword()).build());
+    @PostMapping("/success")
+    public String validation(){
+      /*var optinalUser=userService.validation(UserRequest.builder().username(userRequest.getUsername()).password(userRequest.getPassword()).build());
       if (optinalUser.isPresent()){
-      return "redirect:/";
-      }
-        System.err.println(optinalUser.get());
       return "redirect:/login";
+
+      }*/
+       // System.err.println(optinalUser.get());
+        return "redirect:/";
     }
 }
+
