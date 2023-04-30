@@ -38,18 +38,16 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
 
     // configure SecurityFilterChain
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("/")
-                .authenticated()
+                .permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .loginProcessingUrl("/loadProcessUrl")
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .successForwardUrl("/success")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
                 .logout()

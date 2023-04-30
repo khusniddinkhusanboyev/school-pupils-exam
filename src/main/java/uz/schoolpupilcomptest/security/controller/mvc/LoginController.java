@@ -15,12 +15,11 @@ import uz.schoolpupilcomptest.security.util.UserRequest;
 public class LoginController {
     private final UserService userService;
     @GetMapping("/login")
-    public String login(Model model){
-        model.addAttribute("userDetail" , new UserRequest());
+    public String login(){
         return "login";
     }
 
-    @PostMapping("/loadProcessUrl")
+    /*@PostMapping("/loadProcessUrl")
     public String validation(@RequestParam("username") String username,@RequestParam("password")String password){
       var optinalUser=userService.validation(UserRequest.builder().username(username).password(password).build());
       if (optinalUser.isPresent()){
@@ -28,6 +27,6 @@ public class LoginController {
       }
        // System.err.println(optinalUser.get());
       return "redirect:/login";
-    }
+    }*/
 }
 

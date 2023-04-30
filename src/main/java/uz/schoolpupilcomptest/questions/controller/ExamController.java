@@ -23,10 +23,13 @@ public class ExamController {
     private final SubCategoryService subCategoryService;
     private final QuestionService questionService;
 
+
+    //categegories
     @GetMapping("/categories")
     public ResponseEntity<?> Categories() {
         return ResponseEntity.ok(categoryService.getAll());
     }
+    //sub-categories
     @GetMapping("/sub-categories")
     public ResponseEntity<?> subCategories() {
         return ResponseEntity.ok(subCategoryService.getAll());
@@ -36,6 +39,8 @@ public class ExamController {
     public List<SubCategory> getByCategoryId(@PathVariable("category_id") Integer id){
         return subCategoryService.getByCategoryId(id);
     }
+
+    //question
     @GetMapping("/questions")
     public ResponseEntity<?> questions() {
         return ResponseEntity.ok(questionService.getAll());

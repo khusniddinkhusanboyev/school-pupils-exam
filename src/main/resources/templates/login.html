@@ -14,14 +14,29 @@
     <div class="text-center mt-4 name">
       Twitter
     </div>
-    <form class="p-3 mt-3" th:action="@{/loadProcessUrl}" method="post" th:object="${userDetail}" >
+    <form class="p-3 mt-3" th:action="@{/login}"  >
       <div class="form-field d-flex align-items-center">
         <span class="far fa-user"></span>
-        <input type="text" name="username" th:field="*{username}" id="userName" placeholder="Username">
+
+        <input
+                type="text"
+                name="username"
+                 id="username"
+                placeholder="Username"
+        >
+
       </div>
+
       <div class="form-field d-flex align-items-center">
         <span class="fas fa-key"></span>
-        <input type="password" name="password" th:field="*{password}" id="pwd" placeholder="Password">
+
+        <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+        >
+
       </div>
       <input type="submit" value="Log in" />
     </form>

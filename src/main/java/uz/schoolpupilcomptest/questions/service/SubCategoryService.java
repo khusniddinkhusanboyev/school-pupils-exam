@@ -17,4 +17,8 @@ public class SubCategoryService {
     public List<SubCategory> getByCategoryId(Integer categoryId){
         return subCategoryRepository.findByCategoryId(categoryId);
     }
+
+    public SubCategory add(SubCategory subCategory){
+        return subCategoryRepository.save(subCategory);
+    }
 }
