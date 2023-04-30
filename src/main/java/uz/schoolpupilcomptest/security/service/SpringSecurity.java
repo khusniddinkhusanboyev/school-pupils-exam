@@ -16,11 +16,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurity {
-
 //    @Autowired
 //    private UserDetailsService userDetailsService;
-
-
 
 /*@Bean
 protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
@@ -29,10 +26,6 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
             .and()
             .withUser("admin").password(passwordEncoder().encode("password")).roles("ADMIN");
 }*/
-
-
-
-
     @Bean
     public WebSecurityCustomizer ignoringCustomizer() {
         return (web) -> web.ignoring().requestMatchers("login/login.css");
@@ -48,7 +41,8 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .requestMatchers("/").authenticated()
+                .requestMatchers("/")
+                .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")

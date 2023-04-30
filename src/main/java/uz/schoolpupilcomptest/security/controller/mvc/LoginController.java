@@ -5,10 +5,7 @@ package uz.schoolpupilcomptest.security.controller.mvc;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import uz.schoolpupilcomptest.security.model.User;
 import uz.schoolpupilcomptest.security.service.UserService;
 import uz.schoolpupilcomptest.security.util.UserRequest;
@@ -23,15 +20,14 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/success")
-    public String validation(){
-      /*var optinalUser=userService.validation(UserRequest.builder().username(userRequest.getUsername()).password(userRequest.getPassword()).build());
+    @PostMapping("/loadProcessUrl")
+    public String validation(@RequestParam("username") String username,@RequestParam("password")String password){
+      var optinalUser=userService.validation(UserRequest.builder().username(username).password(password).build());
       if (optinalUser.isPresent()){
-      return "redirect:/login";
-
-      }*/
-       // System.err.println(optinalUser.get());
         return "redirect:/";
+      }
+       // System.err.println(optinalUser.get());
+      return "redirect:/login";
     }
 }
 
