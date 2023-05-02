@@ -7,12 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import uz.schoolpupilcomptest.questions.model.Category;
-import uz.schoolpupilcomptest.questions.model.Question;
-import uz.schoolpupilcomptest.questions.model.SubCategory;
-import uz.schoolpupilcomptest.questions.service.CategoryService;
-import uz.schoolpupilcomptest.questions.service.QuestionService;
-import uz.schoolpupilcomptest.questions.service.SubCategoryService;
+import uz.schoolpupilcomptest.test.entity.Category;
+import uz.schoolpupilcomptest.test.entity.Question;
+import uz.schoolpupilcomptest.test.entity.SubCategory;
+import uz.schoolpupilcomptest.test.service.CategoryService;
+import uz.schoolpupilcomptest.test.service.QuestionService;
+import uz.schoolpupilcomptest.test.service.SubCategoryService;
 
 @SpringBootApplication
 @ComponentScan("uz.schoolpupilcomptest")

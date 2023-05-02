@@ -31,4 +31,8 @@ public class LogInRestController {
 
         }
     }
+    @PostMapping("/save-user")
+    public User create(@RequestBody User user){
+        return userService.create(user);
+    }
 }

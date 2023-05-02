@@ -15,4 +15,7 @@ public class UserResultService {
     public List<UserResults> getAll(){
         return userResultRepository.findAll();
     }
+    public UserResults create(UserResults userResults){
+        return userResultRepository.save(userResults);
+    }
 }

@@ -1,4 +1,4 @@
-package uz.schoolpupilcomptest.questions.controller;
+package uz.schoolpupilcomptest.test.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import uz.schoolpupilcomptest.questions.model.Question;
-import uz.schoolpupilcomptest.questions.model.SubCategory;
-import uz.schoolpupilcomptest.questions.service.CategoryService;
-import uz.schoolpupilcomptest.questions.service.QuestionService;
-import uz.schoolpupilcomptest.questions.service.SubCategoryService;
+import uz.schoolpupilcomptest.test.entity.Question;
+import uz.schoolpupilcomptest.test.entity.SubCategory;
+import uz.schoolpupilcomptest.test.service.CategoryService;
+import uz.schoolpupilcomptest.test.service.QuestionService;
+import uz.schoolpupilcomptest.test.service.SubCategoryService;
 
 import java.util.List;
 

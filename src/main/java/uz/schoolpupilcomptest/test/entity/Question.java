@@ -1,4 +1,4 @@
-package uz.schoolpupilcomptest.questions.model;
+package uz.schoolpupilcomptest.test.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

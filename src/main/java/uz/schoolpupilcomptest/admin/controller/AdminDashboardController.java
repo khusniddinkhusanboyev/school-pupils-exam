@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import uz.schoolpupilcomptest.questions.model.Question;
-import uz.schoolpupilcomptest.questions.service.CategoryService;
-import uz.schoolpupilcomptest.questions.service.QuestionService;
-import uz.schoolpupilcomptest.questions.service.SubCategoryService;
+import uz.schoolpupilcomptest.test.entity.Question;
+import uz.schoolpupilcomptest.test.service.CategoryService;
+import uz.schoolpupilcomptest.test.service.QuestionService;
+import uz.schoolpupilcomptest.test.service.SubCategoryService;
 
 @Controller
 @RequiredArgsConstructor

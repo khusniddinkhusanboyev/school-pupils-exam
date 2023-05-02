@@ -1,9 +1,9 @@
-package uz.schoolpupilcomptest.questions.service;
+package uz.schoolpupilcomptest.test.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import uz.schoolpupilcomptest.questions.model.SubCategory;
-import uz.schoolpupilcomptest.questions.repository.SubCategoryRepository;
+import uz.schoolpupilcomptest.test.entity.SubCategory;
+import uz.schoolpupilcomptest.test.repository.SubCategoryRepository;
 
 import java.util.List;
 

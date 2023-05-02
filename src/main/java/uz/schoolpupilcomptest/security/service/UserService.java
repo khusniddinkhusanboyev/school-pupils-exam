@@ -22,4 +22,7 @@ public class UserService {
     public Optional<User> validation(UserRequest userRequest)  {
         return userRepository.findByUsername(userRequest.getUsername());
     }
+    public User create(User user){
+        return userRepository.save(user);
+    }
 }

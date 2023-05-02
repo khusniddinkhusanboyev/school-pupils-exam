@@ -1,8 +1,7 @@
-package uz.schoolpupilcomptest.questions.repository;
+package uz.schoolpupilcomptest.test.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.schoolpupilcomptest.questions.model.Category;
-import uz.schoolpupilcomptest.questions.model.Question;
+import uz.schoolpupilcomptest.test.entity.Question;
 
 import java.util.List;
 
