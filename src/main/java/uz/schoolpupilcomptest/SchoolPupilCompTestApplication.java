@@ -19,7 +19,7 @@ import uz.schoolpupilcomptest.test.service.SubCategoryService;
 @EnableJpaAuditing
 @EntityScan(basePackages = "uz.schoolpupilcomptest")
 @RequiredArgsConstructor
-public class SchoolPupilCompTestApplication implements CommandLineRunner {
+public class SchoolPupilCompTestApplication /*implements CommandLineRunner*/ {
 
 	private final CategoryService categoryService;
 	private final SubCategoryService subCategoryService;
@@ -28,7 +28,7 @@ public class SchoolPupilCompTestApplication implements CommandLineRunner {
 		SpringApplication.run(SchoolPupilCompTestApplication.class, args);
 	}
 
-	@Override
+	/*@Override
 	public void run(String... args) throws Exception {
 		categoryService.add(
 				Category.builder()
@@ -52,16 +52,16 @@ public class SchoolPupilCompTestApplication implements CommandLineRunner {
 						.build());
 
 		questionService.save(Question.builder()
-				.id(4)
-				.question("computerlarni nechta avlodi bor")
+				.id(1)
+				.question("Hisoblash tizimlari tarkibi quyidagi qismlardan iborat:")
 				.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fmacresearch.org%2Fhow-to-use-apple-hardware-test-ath-on-your-mac%2F&psig=AOvVaw04NerAzFnO4DI4pKaAhPIf&ust=1682960312697000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLCE2u-J0v4CFQAAAAAdAAAAABAR")
-				.optionA("4")
-				.optionC("2")
-				.optionD("5")
-				.optionB("3")
+				.optionA("apparat va dasturiy taʼminot")
+				.optionC("qurilma va dasturlar")
+				.optionD("qurilmalardan")
+				.optionB("faqat dasturlardan")
 				.categoryId(5)
 				.choose(-1)
-				.build());
+				.build());*/
 
-	}
+
 }

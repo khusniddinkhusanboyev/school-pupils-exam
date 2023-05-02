@@ -57,7 +57,12 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
         http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("" +
-                        "login/**").permitAll()
+                        "login/**",
+                        "css/**",
+                        "img/**",
+                        "js/**",
+                        "lib/**",
+                        "scss/**").permitAll()
                 .requestMatchers("/login")
                 .permitAll()
                 .anyRequest().authenticated()

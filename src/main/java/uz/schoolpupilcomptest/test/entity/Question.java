@@ -21,7 +21,7 @@ public class Question {
     private String optionB;
     private String optionC;
     private String optionD;
-    private Integer choose;
+    private String answer;
     //@ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "category_id", nullable = false , table = "category",referencedColumnName ="id")
     private Integer categoryId;
