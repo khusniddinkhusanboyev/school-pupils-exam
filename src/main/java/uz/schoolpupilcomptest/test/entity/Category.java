@@ -15,6 +15,8 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Lob
+    @Column(length=8192)
     private String categoryImage;
     private String categoryName;
 

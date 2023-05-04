@@ -212,6 +212,11 @@
     </div>
 </div>
 <!-- Corusel End -->
+
+
+
+
+
 <!-- Form Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -298,7 +303,7 @@
             <tbody>
             <tr th:each="q:${questions}">
                 <th scope="row" th:text="${q.id}">1</th>
-                <td th:text="${q.image}">Mark</td>
+                <td><img src="${q.image}" width="50px"></td>
                 <td th:text="${q.question}">Mark</td>
                 <td th:text="${q.optionA}">Mark</td>
                 <td th:text="${q.optionB}">Mark</td>
@@ -362,7 +367,7 @@
             <tbody>
             <tr th:each="c:${categories}">
                 <th scope="row" th:text="${c.id}">1</th>
-                <td th:text="${c.categoryImage}">Mark</td>
+                <td><img src="${c.categoryImage}" width="50px"></td>
                 <td th:text="${c.categoryName}">Mark</td>
                 <td><a th:href="@{/delete-Category/{id}(id=${c.id})}" method="post"><img th:src="@{/img/3d-fluency-delete-folder (1).png}" width="40px"></a></td>
             </tr>
@@ -442,7 +447,7 @@
             <tbody>
             <tr th:each="s:${subCategories}">
                 <th scope="row" th:text="${s.id}">1</th>
-                <td th:text="${s.subCategoryImage}">Mark</td>
+                <td><img src="${s.subCategoryImage}" width="50px"></td>
                 <td th:text="${s.title}">Mark</td>
                 <td th:text="${s.description}">Mark</td>
                 <td><a th:href="@{/delete-SubCategory/{id}(id=${s.id})}" method="post"><img th:src="@{/img/3d-fluency-delete-folder (1).png}" width="40px"></a></td>
@@ -453,6 +458,11 @@
     </div>
 </div>
 <!-- Sub-Category End -->
+
+
+
+
+
 <!-- Facts Start -->
 <div class="container-xxl py-5">
     <div class="container">
