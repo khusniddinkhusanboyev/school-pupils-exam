@@ -3,6 +3,7 @@ package uz.schoolpupilcomptest.test.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.schoolpupilcomptest.test.entity.Category;
+import uz.schoolpupilcomptest.test.entity.Question;
 import uz.schoolpupilcomptest.test.repository.CategoryRepository;
 
 import java.util.List;
@@ -21,4 +22,11 @@ public class CategoryService {
     }
 
 
+    public void save(Category category) {
+        categoryRepository.save(category);
+    }
+
+    public void remove(Integer id) {
+        categoryRepository.deleteById(id);
+    }
 }

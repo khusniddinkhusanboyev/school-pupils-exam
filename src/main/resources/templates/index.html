@@ -3,10 +3,9 @@
 <head>
     <!-- Customized Bootstrap Stylesheet -->
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
-   <!-- <link th:href="@{css/style.css}" rel="stylesheet">-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
+
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <meta charset="utf-8">
     <link rel="icon" href="/scss/data-science.png" type="image/x-icon">
@@ -40,7 +39,8 @@
 
 <body>
 <!-- Spinner Start -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
     <i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>
 </div>
@@ -152,11 +152,12 @@
 <!-- Navbar End -->
 
 
-<!-- Carousel Start -->
+<!-- Corusel Start -->
 <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+            <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1">
                 <img class="img-fluid" th:src="@{img/carousel-1.jpg}" alt="Image">
             </button>
             <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2">
@@ -172,7 +173,8 @@
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
-                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital
+                            Solution</h1>
                     </div>
                 </div>
             </div>
@@ -181,7 +183,8 @@
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
-                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital
+                            Solution</h1>
                     </div>
                 </div>
             </div>
@@ -190,7 +193,8 @@
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
-                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital
+                            Solution</h1>
                     </div>
                 </div>
             </div>
@@ -207,8 +211,8 @@
         </button>
     </div>
 </div>
-<!-- Carousel End -->
-<!-- Contact Start -->
+<!-- Corusel End -->
+<!-- Form Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -217,46 +221,55 @@
         </div>
         <div class="row g-0 justify-content-center">
             <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
-                <form th:object="${saveQuestion}" modelAttribute="save-question" th:action="@{/save-question}" method="post">
+                <form th:object="${saveQuestion}" modelAttribute="save-question" th:action="@{/save-question}"
+                      method="post">
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="form-floating">
-                                <select th:field="*{categoryId}" class="form-select" aria-label="Default select example">
-                                    <option th:value="${c.id}"   th:each="c: ${categories} " class="option" th:text="${c.categoryName}" ></option>
+                                <select th:field="*{categoryId}" class="form-select"
+                                        aria-label="Default select example">
+                                    <option th:value="${c.id}" th:each="c: ${categories} " class="option"
+                                            th:text="${c.categoryName}"></option>
                                 </select>
                                 <label for="message">Category</label>
                             </div>
-                        </div> <div class="col-12">
+                        </div>
+                        <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" th:field="*{question}" placeholder="enter question..." id="message" style="height: 200px"></textarea>
+                                <textarea class="form-control" th:field="*{question}" placeholder="enter question..."
+                                          id="message" style="height: 200px"></textarea>
                                 <label for="message">Question</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control"  th:field="*{optionA}" placeholder="A">
+                                <input type="text" class="form-control" th:field="*{optionA}" placeholder="A">
+                                <label for="message">To'g'ri javob...</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" th:field="*{optionB}"  placeholder="B">
-
+                                <input type="text" class="form-control" th:field="*{optionB}" placeholder="B">
+                                <label for="message">Variyant</label>
                             </div>
                         </div>
                         <br>
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="text" class="form-control" th:field="*{optionC}" id="name" placeholder="C">
+                                <label for="message">Variyant</label>
 
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" th:field="*{optionD}" id="email" placeholder="D">
-                               </div>
+                                <input type="text" class="form-control" th:field="*{optionD}" id="email"
+                                       placeholder="D">
+                                <label for="message">Variyant</label>
+                            </div>
                         </div>
                         <div class="col-12 text-center">
-                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">save</button>
                         </div>
                     </div>
                 </form>
@@ -264,8 +277,9 @@
         </div>
     </div>
 </div>
-<!-- Contact End -->
-<!-- Contact Start -->
+<!-- Form End -->
+
+<!-- Questions Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <table class="table table-primary">
@@ -278,24 +292,62 @@
                 <th scope="col">B</th>
                 <th scope="col">C</th>
                 <th scope="col">D</th>
+                <th scope="col">action</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="q:${questions}">
-                <th scope="row">1</th>
+                <th scope="row" th:text="${q.id}">1</th>
                 <td th:text="${q.image}">Mark</td>
                 <td th:text="${q.question}">Mark</td>
                 <td th:text="${q.optionA}">Mark</td>
                 <td th:text="${q.optionB}">Mark</td>
                 <td th:text="${q.optionC}">Mark</td>
                 <td th:text="${q.optionD}">Mark</td>
+                <td><a th:href="@{/delete-Question/{id}(id=${q.id})}" method="post"><img th:src="@{/img/3d-fluency-delete-folder (1).png}" width="40px"></a></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<!-- Contact End -->
-<!-- Contact Start -->
+<!-- Questions End -->
+<!-- Form Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h6 class="section-title bg-white text-center text-primary px-3">Add Category</h6>
+            <h1 class="display-6 mb-4">If You Have Any Category, you can add below</h1>
+        </div>
+        <div class="row g-0 justify-content-center">
+            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+                <form th:object="${saveCategory}"  th:action="@{/save-Category}"    method="post">
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" th:field="*{categoryImage}" placeholder="enter question..."
+                                          style="height: 200px"></textarea>
+                                <label for="message">Image Address</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" th:field="*{categoryName}" placeholder="A">
+                                <label for="message">Category Name</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+<!-- Category Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <table class="table table-success">
@@ -304,20 +356,77 @@
                 <th scope="col">#</th>
                 <th scope="col">Image</th>
                 <th scope="col">Category</th>
+                <th scope="col">action</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="c:${categories}">
-                <th scope="row">1</th>
+                <th scope="row" th:text="${c.id}">1</th>
                 <td th:text="${c.categoryImage}">Mark</td>
                 <td th:text="${c.categoryName}">Mark</td>
+                <td><a th:href="@{/delete-Category/{id}(id=${c.id})}" method="post"><img th:src="@{/img/3d-fluency-delete-folder (1).png}" width="40px"></a></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<!-- Contact End -->
-<!-- Contact Start -->
+<!-- Category End -->
+<!-- Form Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h6 class="section-title bg-white text-center text-primary px-3">Add Sub Category</h6>
+            <h1 class="display-6 mb-4">If You Have Any SubCategory, you can add below</h1>
+        </div>
+        <div class="row g-0 justify-content-center">
+            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+                <form th:object="${saveSubCategory}" th:action="@{/save-save-SubCategory}" method="post">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select th:field="*{categoryId}" class="form-select"
+                                        aria-label="Default select example">
+                                    <option th:value="${c.id}" th:each="c: ${categories} " class="option"
+                                            th:text="${c.categoryName}"></option>
+                                </select>
+                                <label for="message">Category</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" th:field="*{subCategoryImage}"
+                                          placeholder="enter question..." style="height: 200px"></textarea>
+                                <label for="message">Image Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" th:field="*{title}"
+                                          placeholder="enter question..." style="height: 200px"></textarea>
+                                <label for="message">Title</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" th:field="*{description}"
+                                          placeholder="enter question..." style="height: 200px"></textarea>
+                                <label for="message">Description</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Form End -->
+<!-- Sub-Category Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <table class="table">
@@ -327,20 +436,23 @@
                 <th scope="col">Image</th>
                 <th scope="col">title</th>
                 <th scope="col">description</th>
+                <th scope="col">action</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="s:${subCategories}">
-                <th scope="row">1</th>
+                <th scope="row" th:text="${s.id}">1</th>
                 <td th:text="${s.subCategoryImage}">Mark</td>
                 <td th:text="${s.title}">Mark</td>
                 <td th:text="${s.description}">Mark</td>
+                <td><a th:href="@{/delete-SubCategory/{id}(id=${s.id})}" method="post"><img th:src="@{/img/3d-fluency-delete-folder (1).png}" width="40px"></a></td>
+
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<!-- Contact End -->
+<!-- Sub-Category End -->
 <!-- Facts Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -378,428 +490,7 @@
 </div>
 <!-- Facts End -->
 
-<!--
- About Start
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="img-border">
-                    <img class="img-fluid" th:src="@{img/about.jpg}" alt="">
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="h-100">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">10 Years</span> Of Experience</h1>
-                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
-                    <div class="d-flex align-items-center mb-4 pb-2">
-                        <img class="flex-shrink-0 rounded-circle" th:src="@{img/team-1.jpg}" alt="" style="width: 50px; height: 50px;">
-                        <div class="ps-4">
-                            <h6>Jhon Doe</h6>
-                            <small>SEO & Founder</small>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; About End &ndash;&gt;
 
-
-&lt;!&ndash; Service Start &ndash;&gt;
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-            <h1 class="display-6 mb-4">We Focuse On Making The Best In All Sectors</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-1.jpg}" alt="">
-                    <h4 class="mb-0">Web Design</h4>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-2.jpg}" alt="">
-                    <h4 class="mb-0">App Development</h4>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-3.jpg}" alt="">
-                    <h4 class="mb-0">SEO Optimization</h4>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-4.jpg}" alt="">
-                    <h4 class="mb-0">Social Marketing</h4>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-5.jpg}" alt="">
-                    <h4 class="mb-0">Email Marketing</h4>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                    <img class="img-fluid rounded mb-4" th:src="@{img/service-6.jpg}" alt="">
-                    <h4 class="mb-0">PPC Advertising</h4>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; Service End &ndash;&gt;
-
-
-&lt;!&ndash; Feature Start &ndash;&gt;
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="h-100">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">Why Choose Us</h6>
-                    <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <div class="skill">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Digital Marketing</p>
-                                    <p class="mb-2">85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="skill">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">SEO & Backlinks</p>
-                                    <p class="mb-2">90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="skill">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Design & Development</p>
-                                    <p class="mb-2">95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="img-border">
-                    <img class="img-fluid" th:src="@{img/feature.jpg}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; Feature End &ndash;&gt;
-
-
-&lt;!&ndash; Project Start &ndash;&gt;
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Projects</h6>
-            <h1 class="display-6 mb-4">Learn More About Our Complete Projects</h1>
-        </div>
-        <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="project-item border rounded h-100 p-4" data-dot="01">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-1.jpg}" alt="">
-                    <a th:href="@{img/project-1.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="02">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-2.jpg}" alt="">
-                    <a th:href="@{img/project-2.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="03">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-3.jpg}" alt="">
-                    <a th:href="@{img/project-2.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="04">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-4.jpg}" alt="">
-                    <a th:href="@{img/project-4.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="05">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-5.jpg}" alt="">
-                    <a th:href="@{img/project-5.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="06">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-6.jpg}" alt="">
-                    <a th:href="@{img/project-6.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="07">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-7.jpg}" alt="">
-                    <a th:href="@{img/project-7.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="08">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-8.jpg}" alt="">
-                    <a th:href="@{img/project-8.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="09">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-9.jpg}" alt="">
-                    <a th:href="@{img/project-9.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-            <div class="project-item border rounded h-100 p-4" data-dot="10">
-                <div class="position-relative mb-4">
-                    <img class="img-fluid rounded" th:src="@{img/project-10.jpg}" alt="">
-                    <a th:href="@{img/project-10.jpg}" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
-                </div>
-                <h6>UI / UX Design</h6>
-                <span>Digital agency website design and development</span>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; Project End &ndash;&gt;
-
-
-&lt;!&ndash; Team Start &ndash;&gt;
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="section-title bg-white text-center text-primary px-3">Our Team</h6>
-            <h1 class="display-6 mb-4">We Are A Creative Team For Your Dream Project</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item text-center p-4">
-                    <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-1.jpg" alt="">
-                    <div class="team-text">
-                        <div class="team-title">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social">
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item text-center p-4">
-                    <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-2.jpg" alt="">
-                    <div class="team-text">
-                        <div class="team-title">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social">
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item text-center p-4">
-                    <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/team-3.jpg" alt="">
-                    <div class="team-text">
-                        <div class="team-title">
-                            <h5>Full Name</h5>
-                            <span>Designation</span>
-                        </div>
-                        <div class="team-social">
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary rounded-circle" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; Team End &ndash;&gt;
-
-
-&lt;!&ndash; Testimonial Start &ndash;&gt;
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-            <h1 class="display-6 mb-4">What Our Clients Say!</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="img/testimonial-1.jpg" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="img/testimonial-2.jpg" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="img/testimonial-3.jpg" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="img/testimonial-4.jpg" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-        </div>
-    </div>
-</div>
-&lt;!&ndash; Testimonial End &ndash;&gt;
-
-
-&lt;!&ndash; Footer Start &ndash;&gt;
-<div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Address</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-secondary rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Gallery</h5>
-                <div class="row g-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-1.jpg" alt="Image">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-2.jpg" alt="Image">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-3.jpg" alt="Image">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-4.jpg" alt="Image">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-5.jpg" alt="Image">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/project-6.jpg" alt="Image">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    &lt;!&ndash;/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/&ndash;&gt;
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!-- Footer End -->
 
 
 <!-- Back to Top -->

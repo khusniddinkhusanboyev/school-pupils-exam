@@ -14,6 +14,9 @@ import uz.schoolpupilcomptest.test.service.CategoryService;
 import uz.schoolpupilcomptest.test.service.QuestionService;
 import uz.schoolpupilcomptest.test.service.SubCategoryService;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @SpringBootApplication
 @ComponentScan("uz.schoolpupilcomptest")
 @EnableJpaAuditing

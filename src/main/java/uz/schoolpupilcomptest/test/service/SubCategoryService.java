@@ -21,4 +21,12 @@ public class SubCategoryService {
     public SubCategory add(SubCategory subCategory){
         return subCategoryRepository.save(subCategory);
     }
+
+    public void save(SubCategory subCategory) {
+        subCategoryRepository.save(subCategory);
+    }
+
+    public void remove(Integer id) {
+        subCategoryRepository.deleteById(id);
+    }
 }

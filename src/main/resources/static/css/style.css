@@ -489,8 +489,3 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
-body {
-    overflow-y: hidden; /* Hide vertical scrollbar *//*
-    overflow-x: hidden; *//* Hide horizontal scrollbar */
-    background: #ecf0f3;
-}
