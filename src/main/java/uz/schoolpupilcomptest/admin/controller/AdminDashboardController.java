@@ -54,12 +54,12 @@ public class AdminDashboardController {
         return "redirect:/";
     }
 
-    @PostMapping("/delete-Question/{id}")
+    @GetMapping("/delete-Question/{id}")
     public String deleteQuestion(@PathVariable("id")Integer id){
         questionService.remove(id);
         return "redirect:/";
     }
-    @PostMapping("/delete-Category/{id}")
+    @GetMapping("/delete-Category/{id}")
     public String deleteCategory(@PathVariable("id")Integer id){
         categoryService.remove(id);
         return "redirect:/";
