@@ -15,23 +15,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.RememberMeServices;
+import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 */
 
 //@Configuration
 //@EnableWebSecurity
 public class SpringSecurity {
-//    @Autowired
-//    private UserDetailsService userDetailsService;
-
-/*@Bean
-protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication()
-            .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
-            .and()
-            .withUser("admin").password(passwordEncoder().encode("password")).roles("ADMIN");
-}*/
-
 
   /*  @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
@@ -80,18 +71,11 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .permitAll()
                 .and()
-                .rememberMe();
+                .rememberMe()
+                .tokenValiditySeconds(5);
         return http.build();
     }
     */
 
-/*    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("ram").password("ram123").roles("ADMIN");
-    }*/
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
-//        builder.userDetailsService(userDetailsService)
-//                .passwordEncoder(passwordEncoder());
-//    }
+
 }

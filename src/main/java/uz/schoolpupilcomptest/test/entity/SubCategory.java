@@ -15,6 +15,8 @@ public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Lob
+    @Column(length=8192)
     private String subCategoryImage;
     private String title;
     @Lob
