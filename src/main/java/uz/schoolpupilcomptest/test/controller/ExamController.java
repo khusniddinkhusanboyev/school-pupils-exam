@@ -23,7 +23,6 @@ public class ExamController {
     private final SubCategoryService subCategoryService;
     private final QuestionService questionService;
 
-
     //categegories
     @GetMapping("/categories")
     public ResponseEntity<?> Categories() {

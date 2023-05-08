@@ -1,12 +1,10 @@
 package uz.schoolpupilcomptest.test.service;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import uz.schoolpupilcomptest.test.entity.SubCategory;
 import uz.schoolpupilcomptest.test.repository.SubCategoryRepository;
 
 import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class SubCategoryService {
@@ -17,7 +15,6 @@ public class SubCategoryService {
     public List<SubCategory> getByCategoryId(Integer categoryId){
         return subCategoryRepository.findByCategoryId(categoryId);
     }
-
     public SubCategory add(SubCategory subCategory){
         return subCategoryRepository.save(subCategory);
     }

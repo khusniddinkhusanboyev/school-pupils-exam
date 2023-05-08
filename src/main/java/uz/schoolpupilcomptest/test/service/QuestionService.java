@@ -13,7 +13,6 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
     public Question save(Question question){
       return   questionRepository.save(question);
-
     }
     public List<Question> getAll(){
         return questionRepository.findAll();

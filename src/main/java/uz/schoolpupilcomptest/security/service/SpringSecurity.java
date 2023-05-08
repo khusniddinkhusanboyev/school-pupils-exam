@@ -4,7 +4,7 @@ package uz.schoolpupilcomptest.security.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+/*
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,9 +16,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+*/
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class SpringSecurity {
 //    @Autowired
 //    private UserDetailsService userDetailsService;
@@ -32,7 +33,7 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
 }*/
 
 
-    @Bean
+  /*  @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails user = User.withUsername("user")
                 .password(passwordEncoder.encode("password"))
@@ -63,16 +64,10 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
                         "img/**",
                         "js/**",
                         "lib/**",
-                        "scss/**").permitAll()
-                .requestMatchers(
-                        HttpMethod.GET,
-                        "/login",
-                        "/api/**"
-                ).permitAll()
-                .requestMatchers(
-                        HttpMethod.POST ,
-                        "/api/**"
-                ).permitAll()
+                        "scss/**")
+                        .permitAll()
+                .requestMatchers("/login")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -88,6 +83,8 @@ protected void configure(final AuthenticationManagerBuilder auth) throws Excepti
                 .rememberMe();
         return http.build();
     }
+    */
+
 /*    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("ram").password("ram123").roles("ADMIN");

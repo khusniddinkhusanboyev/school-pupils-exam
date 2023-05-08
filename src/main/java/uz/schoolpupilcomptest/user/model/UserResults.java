@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-    //@SecondaryTable(name = "user",schema ="school-pupils-test", pkJoinColumns = @PrimaryKeyJoinColumn(name = "id"))
+//@SecondaryTable(name = "user",schema ="school-pupils-test", pkJoinColumns = @PrimaryKeyJoinColumn(name = "id"))
 @Entity
 public class UserResults {
 
@@ -22,10 +22,10 @@ public class UserResults {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id" , nullable = false ,referencedColumnName = "id")
+    @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
     private User userId;
-    private Double generalScore;
-        private LocalDateTime localDateTime=LocalDateTime.now();
+    private Integer answerCount;
+    private LocalDateTime localDateTime ;
 
 
 }

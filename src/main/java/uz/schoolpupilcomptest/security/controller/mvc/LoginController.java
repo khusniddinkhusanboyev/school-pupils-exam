@@ -1,15 +1,15 @@
 
-package uz.schoolpupilcomptest.security.controller.mvc;
 
+package uz.schoolpupilcomptest.security.controller.mvc;
+/*
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import uz.schoolpupilcomptest.security.model.User;
 import uz.schoolpupilcomptest.security.service.UserService;
 import uz.schoolpupilcomptest.security.util.UserRequest;
@@ -19,22 +19,18 @@ import uz.schoolpupilcomptest.security.util.UserRequest;
 public class LoginController {
     private final UserService userService;
     @GetMapping("/login")
-    public String login(){
+    public String login(Model model){
+        model.addAttribute("userDetail" , new UserRequest());
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(
-            @RequestParam("username") String username,
-            @RequestParam("password") String password,
-            Model model) {
-        Authentication authentication =
-                new UsernamePasswordAuthenticationToken(username, password);
-        AuthenticationManager authenticationManager =
-                (AuthenticationManager) SecurityContextHolder.getContext().getAuthentication();
-        Authentication result = authenticationManager.authenticate(authentication);
-        SecurityContextHolder.getContext().setAuthentication(result);
-        return "redirect:/home";
+    @PostMapping("/loadProcessUrl")
+    public String validation(@ModelAttribute("userDetail")UserRequest userRequest){
+      var optinalUser=userService.validation(UserRequest.builder().username(userRequest.getUsername()).password(userRequest.getPassword()).build());
+      if (optinalUser.isPresent()){
+      return "redirect:/";
+      }
+        System.err.println(optinalUser.get());
+      return "redirect:/login";
     }
-}
-
+}*/
